@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+
+<h2>Simple Interest Calculator</h2>
+
+<script>
+function simpleInterest(p, r, n) {
+    return (p * r * n) / 100;
+}
+
+let principal = parseFloat(prompt("Enter Principal Amount:"));
+let rate = parseFloat(prompt("Enter Rate of Interest (%):"));
+let years = parseFloat(prompt("Enter Number of Years:"));
+
+let interest = simpleInterest(principal, rate, years);
+
+document.write("<h3>--- Simple Interest Result ---</h3>");
+document.write("Principal Amount: " + principal + "<br>");
+document.write("Rate of Interest: " + rate + "%<br>");
+document.write("Years: " + years + "<br>");
+document.write("<b>Simple Interest: " + interest + "</b>");
+</script>
+
+</body>
+</html>

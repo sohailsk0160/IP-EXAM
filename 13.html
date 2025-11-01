@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person & Student Inheritance</title>
+</head>
+<body>
+
+<h2>Person & Student Inheritance Example in JavaScript</h2>
+
+<script>
+// Parent class
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    showPerson() {
+        return `Name: ${this.name}, Age: ${this.age}`;
+    }
+}
+
+// Derived class
+class Student extends Person {
+    constructor(name, age, course, marks) {
+        super(name, age); 
+        this.course = course;
+        this.marks = marks;
+    }
+    showStudent() {
+        return `${this.showPerson()}, Course: ${this.course}, Marks: ${this.marks}`;
+    }
+}
+
+// Creating 2 Student objects
+let s1 = new Student("Sohail", 21, "IT", 90);
+let s2 = new Student("Amaan", 22, "Computer", 88);
+
+// Display using document.write
+document.write("<b>Student 1:</b> " + s1.showPerson() + "<br>");
+document.write("<b>Student 2:</b> " + s2.showPerson() + "<br>");
+</script>
+
+</body>
+</html>

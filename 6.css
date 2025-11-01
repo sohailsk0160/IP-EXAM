@@ -1,0 +1,15 @@
+/* External CSS */
+.highlight{
+    color:green;
+    font-weight:bold;
+}
+.link-btn{
+    background:#0077b6;
+    color:white;
+    padding:6px 10px;
+    text-decoration:none;
+    border-radius:4px;
+}
+.link-btn:hover{
+    opacity:0.8;
+}

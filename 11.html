@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSS — Fonts, Text & Background Properties (Example)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Base / Reset ---------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 40%);
+      color:#222;
+      padding:36px;
+    }
+
+    /* ---------- Page wrapper ---------- */
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      background: white;
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(34,41,47,0.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+      min-height:70vh;
+    }
+
+    /* ---------- Header demonstrating font-family & font-weight ---------- */
+    header{
+      padding:36px 48px;
+      background-image: linear-gradient(90deg, rgba(28,107,255,0.06), rgba(139,92,246,0.03));
+      border-bottom:1px solid rgba(34,41,47,0.05);
+    }
+    .brand{
+      font-family: 'Playfair Display', serif;
+      font-size:28px;
+      font-weight:700; /* bold style */
+      letter-spacing:0.6px;
+      color:#1c3b8a;
+    }
+    .tagline{
+      margin-top:6px;
+      color:#5b6b88;
+      font-weight:500;
+      font-size:14px;
+    }
+
+    /* ---------- Hero: background image + text-shadow + text-transform ---------- */
+    .hero{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      padding:48px;
+      background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=60');
+      background-size:cover;
+      background-position:center center;
+      background-repeat:no-repeat;
+      color:white;
+      min-height:240px;
+    }
+    .hero-overlay{
+      /* subtle dark overlay using background-color + mix-blend */
+      background:linear-gradient(90deg, rgba(12,12,25,0.65), rgba(12,12,25,0.2));
+      padding:28px;
+      border-radius:10px;
+      max-width:640px;
+    }
+    .hero h1{
+      font-family: 'Playfair Display', serif;
+      font-size:36px;
+      margin-bottom:8px;
+      text-shadow:0 6px 18px rgba(2,6,23,0.5);
+    }
+    .hero p{
+      font-size:16px;
+      opacity:0.95;
+    }
+    .caps{ text-transform:uppercase; letter-spacing:2px; font-weight:600; font-size:12px }
+
+    /* ---------- Content cards show text-alignment, word-spacing, letter-spacing ---------- */
+    .content{
+      padding:36px 48px;
+      display:grid;
+      gap:22px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .card{
+      background: linear-gradient(180deg, #ffffff, #fbfbff);
+      border:1px solid rgba(34,41,47,0.05);
+      padding:18px;
+      border-radius:10px;
+      min-height:120px;
+    }
+    .card h3{
+      font-size:18px;
+      margin-bottom:8px;
+    }
+    .muted{ color:#6b7280; font-size:14px }
+
+    /* text decoration + text-overflow example */
+    .link-like{ color:#2754ff; text-decoration:underline; cursor:pointer }
+    .note{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; display:block }
+
+    /* ---------- Footer demonstrates background properties + multiple backgrounds ---------- */
+    footer{
+      padding:22px 48px;
+      background-color:#0f1724;
+      color:#cbd5e1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .footer-left{ font-size:14px }
+    .footer-right{ font-size:13px; opacity:0.9 }
+
+    /* ---------- Utilities demonstrating font-size, weight and responsive text ---------- */
+    .big{ font-size:20px; font-weight:800 }
+    .small{ font-size:13px }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width:720px){
+      .hero{ padding:24px; min-height:200px }
+      .hero h1{ font-size:24px }
+      header, .content, footer{ padding-left:18px; padding-right:18px }
+      .page{ border-radius:8px }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Type & Background Playground</div>
+      <div class="tagline">A compact demo of CSS font, text, and background properties</div>
+    </header>
+
+    <section class="hero" aria-label="hero">
+      <div class="hero-overlay">
+        <div class="caps">Typography • Contrast • Layout</div>
+        <h1>Design with readable type and rich backgrounds</h1>
+        <p>Use the right font-family and weights for hierarchy, add subtle text-shadow for legibility over images, and pair solid backgrounds with gradients or images for depth.</p>
+      </div>
+    </section>
+
+    <main class="content">
+      <article class="card">
+        <h3>Font Family & Weights</h3>
+        <p class="muted">Try switching <strong>font-family</strong> between a serif and a sans-serif and use <strong>font-weight</strong> to create hierarchy (300 light — 800 extra bold).</p>
+      </article>
+
+      <article class="card">
+        <h3>Text Transform & Spacing</h3>
+        <p class="muted">Properties: <code>text-transform</code>, <code>letter-spacing</code>, <code>word-spacing</code>. Use letter-spacing for uppercase headings and word-spacing for improving paragraph rhythm.</p>
+      </article>
+
+      <article class="card">
+        <h3>Text Decoration & Shadow</h3>
+        <p class="muted">Use <code>text-decoration</code> for links, and <code>text-shadow</code> to lift text off bright images (apply sparingly).</p>
+        <p class="note">Example note that may truncate on small widths: A very long line of text that demonstrates text-overflow behaviour when a container gets narrow.</p>
+      </article>
+
+      <article class="card">
+        <h3>Background Techniques</h3>
+        <p class="muted">Solid colors, gradients, images, and layered backgrounds: combine them with <code>background-size</code>, <code>background-position</code>, and <code>background-attachment</code>.</p>
+        <p class="small">Try: <code>background: linear-gradient(90deg,#fefefe88,#ffffff00), url(...)</code></p>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-left">Made with care — <span class="big">Fonts</span> • <span class="big">Text</span> • <span class="big">Background</span></div>
+      <div class="footer-right">Tip: inspect elements and tweak font-size & line-height to improve readability</div>
+    </footer>
+  </div>
+</body>
+</html>

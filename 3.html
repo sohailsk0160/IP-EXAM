@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Styled HTML Form</title>
+<style>
+body{
+    font-family: Arial;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+.container{
+    background:white;
+    width:380px;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
+.container h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+input, select, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+input[type="radio"], input[type="checkbox"]{
+    width:auto;
+}
+button{
+    width:48%;
+    padding:10px;
+    margin-top:12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.submit-btn{
+    background:#28a745;
+    color:white;
+}
+.reset-btn{
+    background:#dc3545;
+    color:white;
+}
+button:hover{opacity:0.9;}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Registration Form</h2>
+<form>
+    <label>Full Name:</label>
+    <input type="text" placeholder="Enter your name" required>
+
+    <label>Email:</label>
+    <input type="email" placeholder="Enter your email" required>
+
+    <label>Password:</label>
+    <input type="password" placeholder="Enter password" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" placeholder="Enter phone number">
+
+    <label>Gender:</label>
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female
+
+    <label>Hobbies:</label>
+    <input type="checkbox"> Reading
+    <input type="checkbox"> Sports
+    <input type="checkbox"> Music
+
+    <label>Date of Birth:</label>
+    <input type="date">
+
+    <label>Upload File:</label>
+    <input type="file">
+
+    <label>Select Country:</label>
+    <select>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Canada</option>
+    </select>
+
+    <label>Address:</label>
+    <textarea rows="3" placeholder="Enter your address"></textarea>
+
+    <label>Range (0-100):</label>
+    <input type="range" min="0" max="100">
+
+    <label>Search:</label>
+    <input type="search" placeholder="Search here">
+
+    <label>URL:</label>
+    <input type="url" placeholder="Enter website URL">
+
+    <div style="display:flex; justify-content:space-between;">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="reset" class="reset-btn">Reset</button>
+    </div>
+</form>
+</div>
+</body>
+</html>

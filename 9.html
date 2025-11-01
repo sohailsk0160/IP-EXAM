@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background:#eef3ff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+.container {
+  background:white;
+  padding:20px 25px;
+  border-radius:8px;
+  width:350px;
+  box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
+h2 {
+  text-align:center;
+  color:#1a4bff;
+}
+input {
+  width:100%;
+  padding:8px;
+  margin:6px 0;
+  border:1px solid #aaa;
+  border-radius:5px;
+}
+button {
+  width:100%;
+  padding:10px;
+  background:#1a4bff;
+  border:none;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  border-radius:5px;
+}
+button:hover{
+  background:#0239e6;
+}
+.error {
+  color:red;
+  font-size:13px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Registration Form</h2>
+
+<form id="myForm" onsubmit="return validateForm()">
+  <label>Name:</label>
+  <input type="text" id="name">
+  <span class="error" id="nameErr"></span><br>
+
+  <label>Email:</label>
+  <input type="text" id="email">
+  <span class="error" id="emailErr"></span><br>
+
+  <label>Password:</label>
+  <input type="password" id="password">
+  <span class="error" id="passErr"></span><br>
+
+  <label>Phone:</label>
+  <input type="text" id="phone">
+  <span class="error" id="phoneErr"></span><br>
+
+  <button type="submit">Submit</button>
+</form>
+</div>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let password = document.getElementById("password").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+
+  let valid = true;
+
+  document.getElementById("nameErr").innerHTML = "";
+  document.getElementById("emailErr").innerHTML = "";
+  document.getElementById("passErr").innerHTML = "";
+  document.getElementById("phoneErr").innerHTML = "";
+
+  if (name === "") {
+    document.getElementById("nameErr").innerHTML = "Name is required";
+    valid = false;
+  }
+
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    document.getElementById("emailErr").innerHTML = "Enter valid email";
+    valid = false;
+  }
+
+  if (password.length < 6) {
+    document.getElementById("passErr").innerHTML = "Min 6 characters required";
+    valid = false;
+  }
+
+  let phonePattern = /^[0-9]{10}$/;
+  if (!phone.match(phonePattern)) {
+    document.getElementById("phoneErr").innerHTML = "Enter 10-digit phone";
+    valid = false;
+  }
+
+  return valid;
+}
+</script>
+
+</body>
+</html>

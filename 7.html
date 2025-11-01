@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Day & Time</title>
+
+  <!-- Internal CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4ff;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .container {
+      background: white;
+      width: 350px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #1a4bff;
+    }
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h2>Current Day & Time</h2>
+    <h3 id="day"></h3>
+    <p id="time"></p>
+  </div>
+
+  <script>
+    function showDateTime() {
+      const now = new Date();
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const dayName = days[now.getDay()];
+
+      let hour = now.getHours();
+      const minute = now.getMinutes().toString().padStart(2,'0');
+      const second = now.getSeconds().toString().padStart(2,'0');
+      const ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12 || 12;
+
+      document.getElementById("day").innerText = "Today is: " + dayName;
+      document.getElementById("time").innerText = "Time: " + hour + ":" + minute + ":" + second + " " + ampm;
+    }
+
+    showDateTime();
+    setInterval(showDateTime, 1000);
+  </script>
+
+</body>
+</html>

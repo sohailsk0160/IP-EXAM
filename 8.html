@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrow Function Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Arrow Function Example</h2>
+    <p id="output">Click the button to see results.</p>
+    <button id="runBtn">Run Arrow Functions</button>
+  </div>
+
+  <script>
+    // Arrow function with no parameters
+    const greet = () => "Hello from an arrow function!";
+
+    // Arrow function with one parameter
+    const square = n => n * n;
+
+    // Arrow function with two parameters
+    const sum = (a, b) => a + b;
+
+    document.getElementById('runBtn').addEventListener('click', () => {
+      const message = greet();
+      const sq = square(5);
+      const sm = sum(4, 7);
+
+      document.getElementById('output').innerHTML =
+        `${message}<br>
+         The square of 5 is: ${sq}<br>
+         The sum of 4 + 7 is: ${sm}`;
+    });
+  </script>
+
+</body>
+</html>
